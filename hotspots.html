@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Explore a current SoCal fishing hotspot map with clickable markers, current fish notes, and live links to official California fishing resources."
+    >
+    <title>Hotspots Map | Hooked on LA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&family=Bricolage+Grotesque:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="hotspots.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html">
+          <span class="brand-kicker">LA Fishing Hub</span>
+          <span class="brand-name">Hooked on LA</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="learn.html">Learn</a>
+          <a href="la-river.html">LA River & Spots</a>
+          <a href="hotspots.html" aria-current="page">Hotspots Map</a>
+          <a href="gear.html">Gear Picks</a>
+          <a href="sources.html">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero-inner">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Current map view</p>
+            <h1>See where the fish hotspots are right now.</h1>
+            <p class="hero-text">
+              This page gives you a current spring 2026 hotspot snapshot for LA and nearby Southern California waters.
+              Click a marker to see target fish, what is hot now, and the source page behind the call.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#hotspot-map">Jump to the map</a>
+              <a class="button button-secondary" href="https://wildlife.ca.gov/Fishing/Guide" target="_blank" rel="noreferrer">Open the live CDFW guide</a>
+            </div>
+            <ul class="hero-metrics">
+              <li>
+                <strong>Current snapshot</strong>
+                <span>Built around conditions checked on March 27, 2026.</span>
+              </li>
+              <li>
+                <strong>Clickable areas</strong>
+                <span>Filter by bass, trout, river, shoreline-only, or LA area.</span>
+              </li>
+              <li>
+                <strong>Live handoff</strong>
+                <span>Every hotspot points you back to an official source page.</span>
+              </li>
+            </ul>
+          </div>
+
+          <figure class="hero-photo frame-card">
+            <img
+              src="assets/bass-hero.jpg"
+              alt="A largemouth bass shown on a glossy fishing hero panel"
+            >
+            <figcaption>Frutiger Aero mode: glossy blues, glass panels, and bass on the front page.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section-tinted">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Hotspot controls</p>
+            <h2>Filter the map by the fish or area you care about.</h2>
+            <p>
+              I kept the map centered on Los Angeles and nearby Southern California hotspots because that fits the rest
+              of the site best and gives more trustworthy local detail.
+            </p>
+          </div>
+
+          <div class="filter-bar" role="toolbar" aria-label="Filter hotspots">
+            <button class="filter-chip is-active" type="button" data-map-filter="all">All hotspots</button>
+            <button class="filter-chip" type="button" data-map-filter="la">LA area</button>
+            <button class="filter-chip" type="button" data-map-filter="river">River</button>
+            <button class="filter-chip" type="button" data-map-filter="bass">Bass</button>
+            <button class="filter-chip" type="button" data-map-filter="trout">Trout</button>
+            <button class="filter-chip" type="button" data-map-filter="shoreline">Shoreline-only</button>
+          </div>
+
+          <div class="map-layout">
+            <section class="map-panel frame-card">
+              <div id="hotspot-map" class="hotspot-map" aria-label="Fishing hotspots map"></div>
+            </section>
+
+            <aside class="map-sidebar">
+              <article class="guide-panel">
+                <p class="eyebrow">Best live data</p>
+                <h2>Need the freshest planting and rule layers?</h2>
+                <p>
+                  California Department of Fish and Wildlife already runs a live map with fish planting locations,
+                  historically good places to fish, boat launches, and regulations.
+                </p>
+                <div class="hero-actions">
+                  <a class="button button-secondary" href="https://wildlife.ca.gov/Fishing/Guide" target="_blank" rel="noreferrer">Open CDFW Fishing Guide</a>
+                  <a class="button button-secondary" href="https://apps.wildlife.ca.gov/sportfishingregs/" target="_blank" rel="noreferrer">Open rules map</a>
+                </div>
+              </article>
+
+              <div id="hotspot-list" class="hotspot-list" aria-live="polite"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container card-grid three-up">
+          <article class="feature-card">
+            <h3>What “current” means here</h3>
+            <p>
+              These cards are a time-stamped fishing snapshot for late March 2026. They combine official species lists,
+              current access notes, and the time of year.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Why some cards say shoreline-only</h3>
+            <p>
+              Pyramid Lake had a current DWR update on January 29, 2026 saying recreational boat activities were closed
+              because of water levels, while shoreline and park access remained open.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>How to use the page smartly</h3>
+            <p>
+              Use this map to choose a spot fast, then open the source link for the final rule, advisory, or access
+              check before you leave home.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h2>Hotspot map added.</h2>
+          <p>The site now has a visual way to scout waters instead of reading only cards and pages.</p>
+        </div>
+        <div>
+          <p>Need basics first? Go back to <a href="learn.html">Learn</a>.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

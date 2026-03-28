@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node --check app.js",
+    "check": "node --check app.js && node --check hotspots.js",
     "start": "python3 -m http.server 4173"
   }
 }
