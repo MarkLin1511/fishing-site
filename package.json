@@ -1,0 +1,9 @@
+{
+  "name": "la-fishing-hub",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check app.js",
+    "start": "python3 -m http.server 4173"
+  }
+}

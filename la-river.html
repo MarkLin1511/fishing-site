@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Explore LA River fishing access, nearby beginner-friendly fishing spots, local fish species, seasonal advice, and safety tips."
+    >
+    <title>LA River & Local Spots | Hooked on LA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&family=Bricolage+Grotesque:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html">
+          <span class="brand-kicker">LA Fishing Hub</span>
+          <span class="brand-name">Hooked on LA</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="learn.html">Learn</a>
+          <a href="la-river.html" aria-current="page">LA River & Spots</a>
+          <a href="gear.html">Gear Picks</a>
+          <a href="sources.html">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero hero-inner">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Local guide</p>
+            <h1>Yes, you really can fish in Los Angeles.</h1>
+            <p class="hero-text">
+              The LA River is not one giant free-for-all. The smart move is to use legal public access, stay aware of
+              safety and water quality, and learn which nearby waters are easiest for beginners.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#spots">See the spots</a>
+              <a class="button button-secondary" href="sources.html">See the source links</a>
+            </div>
+          </div>
+
+          <figure class="hero-photo frame-card">
+            <img
+              src="assets/bass-hero.jpg"
+              alt="A bass with mouth open near the camera"
+            >
+            <figcaption>LA fishing dreams usually begin with bass, bluegill, or catfish.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container card-grid three-up">
+          <article class="feature-card">
+            <h3>License rule</h3>
+            <p>California requires a sport fishing license for most anglers age 16 and older in inland waters.</p>
+          </article>
+          <article class="feature-card">
+            <h3>LA River access rule</h3>
+            <p>The MRCA recreation zones allow public fishing in designated areas, typically from Memorial Day to the end of September.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Safety rule</h3>
+            <p>Avoid water contact after rain, stay off closed or fenced areas, and check safe-eating advice before keeping fish.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-tinted" id="spots">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Spot finder</p>
+            <h2>Beginner-friendly places to fish near LA</h2>
+            <p>Use the filters if you want a smaller list.</p>
+          </div>
+
+          <div class="filter-bar" role="toolbar" aria-label="Filter fishing spots">
+            <button class="filter-chip is-active" type="button" data-filter="all">All spots</button>
+            <button class="filter-chip" type="button" data-filter="river">River</button>
+            <button class="filter-chip" type="button" data-filter="family">Family-friendly</button>
+            <button class="filter-chip" type="button" data-filter="bass">Bass</button>
+            <button class="filter-chip" type="button" data-filter="trout">Trout</button>
+            <button class="filter-chip" type="button" data-filter="catfish">Catfish</button>
+          </div>
+
+          <div class="card-grid three-up" data-filter-grid>
+            <article class="spot-card" data-tags="river family bass">
+              <h3>LA River Recreation Zone: Sepulveda Basin</h3>
+              <p class="spot-meta">Encino | legal river access in the warm season</p>
+              <p>
+                Great if you want the real LA River feel. The MRCA says the public may walk, fish, and kayak in the
+                designated zone, usually from Memorial Day through the end of September.
+              </p>
+              <ul class="tag-list">
+                <li>River</li>
+                <li>Bass</li>
+                <li>Tilapia</li>
+                <li>Carp</li>
+              </ul>
+            </article>
+
+            <article class="spot-card" data-tags="river family bass">
+              <h3>LA River Recreation Zone: Elysian Valley</h3>
+              <p class="spot-meta">Near Lewis MacAdams Riverfront Park | urban soft-bottom reach</p>
+              <p>
+                This zone gives you a more central LA River experience. Public fishing is allowed inside the designated
+                recreation area when it is open and conditions are safe.
+              </p>
+              <ul class="tag-list">
+                <li>River</li>
+                <li>Urban</li>
+                <li>Walk-in access</li>
+                <li>Seasonal zone</li>
+              </ul>
+            </article>
+
+            <article class="spot-card" data-tags="family bass catfish">
+              <h3>Hansen Dam Recreation Lake</h3>
+              <p class="spot-meta">Lake View Terrace | fishing permitted</p>
+              <p>
+                The City of Los Angeles lists fishing as permitted here. It is a strong first choice if you want easy
+                lake water instead of a river edge.
+              </p>
+              <ul class="tag-list">
+                <li>Family-friendly</li>
+                <li>Bass</li>
+                <li>Catfish</li>
+                <li>Boating nearby</li>
+              </ul>
+            </article>
+
+            <article class="spot-card" data-tags="family trout catfish bass">
+              <h3>Legg Lake at Whittier Narrows</h3>
+              <p class="spot-meta">South El Monte | easy banks and stocked seasons</p>
+              <p>
+                One of the best first-trip lakes in the area. OEHHA and local reports note common catch targets like
+                sunfish, catfish, bass, and stocked trout in the cool season.
+              </p>
+              <ul class="tag-list">
+                <li>Family-friendly</li>
+                <li>Trout</li>
+                <li>Catfish</li>
+                <li>Sunfish</li>
+              </ul>
+            </article>
+
+            <article class="spot-card" data-tags="family bass catfish">
+              <h3>Santa Fe Dam Lake</h3>
+              <p class="spot-meta">Irwindale | city-close lake with multiple target species</p>
+              <p>
+                A solid option for sunfish, catfish, carp, and bass. Good for short trips when you want simple bank
+                fishing without a huge drive.
+              </p>
+              <ul class="tag-list">
+                <li>Family-friendly</li>
+                <li>Bass</li>
+                <li>Catfish</li>
+                <li>Carp</li>
+              </ul>
+            </article>
+
+            <article class="spot-card" data-tags="family bass">
+              <h3>Castaic Lagoon</h3>
+              <p class="spot-meta">Northern LA County | calm water with bigger-adventure feel</p>
+              <p>
+                Good if you want more space and stronger fish options. Remember the park's invasive-species inspection
+                rules for boats and the updated fish-eating advisory.
+              </p>
+              <ul class="tag-list">
+                <li>Family-friendly</li>
+                <li>Bass</li>
+                <li>Sunfish</li>
+                <li>Carp</li>
+              </ul>
+            </article>
+
+            <article class="spot-card" data-tags="bass catfish">
+              <h3>Castaic Lake</h3>
+              <p class="spot-meta">Northern LA County | bigger water and stronger fish</p>
+              <p>
+                This is the move when you want more challenge, more room, and a shot at species like striped bass in a
+                larger reservoir setting.
+              </p>
+              <ul class="tag-list">
+                <li>Big water</li>
+                <li>Bass</li>
+                <li>Striped bass</li>
+                <li>Catfish</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">LA River fish</p>
+            <h2>Fish you may hear about in and around the river</h2>
+            <p>
+              State water board materials and local public river sources show a mix of warm-water urban fish here,
+              including carp, tilapia, catfish, sunfish, and occasional bass.
+            </p>
+          </div>
+
+          <div class="card-grid four-up">
+            <article class="info-card">
+              <h3>Carp</h3>
+              <p>Strong bottom fish and one of the classic urban-river targets.</p>
+            </article>
+            <article class="info-card">
+              <h3>Tilapia</h3>
+              <p>Warm-water fish often found in slower LA River reaches.</p>
+            </article>
+            <article class="info-card">
+              <h3>Green sunfish</h3>
+              <p>Small but aggressive. Happy to bite worms, tiny jigs, and insects.</p>
+            </article>
+            <article class="info-card">
+              <h3>Black bullhead or other catfish</h3>
+              <p>Bottom fish that tolerate murky city water better than many species.</p>
+            </article>
+            <article class="info-card">
+              <h3>Largemouth bass</h3>
+              <p>Not everywhere, but absolutely worth chasing in the calmer, cover-filled areas nearby.</p>
+            </article>
+            <article class="info-card">
+              <h3>Mosquitofish and minnows</h3>
+              <p>Tiny fish that remind you the river is a living system, not just a concrete channel.</p>
+            </article>
+            <article class="info-card">
+              <h3>Arroyo chub</h3>
+              <p>A native fish that appears in some basin studies and deserves respect.</p>
+            </article>
+            <article class="info-card">
+              <h3>Steelhead history</h3>
+              <p>Steelhead are part of the river's story, even if modern beginners are not targeting them here.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <div class="section-heading section-heading-light">
+            <p class="eyebrow">Best seasons</p>
+            <h2>What to chase through the year</h2>
+          </div>
+
+          <div class="card-grid four-up">
+            <article class="timeline-card">
+              <h3>Winter</h3>
+              <p>Stocked trout at city lakes can be the easiest fun. Bass usually slow down in cold water.</p>
+            </article>
+            <article class="timeline-card">
+              <h3>Spring</h3>
+              <p>Bass often move shallow. This is a great season for plastic worms and moving baits near cover.</p>
+            </article>
+            <article class="timeline-card">
+              <h3>Summer</h3>
+              <p>Catfish, carp, sunfish, and warm-water river fishing shine. Fish early and late to beat the heat.</p>
+            </article>
+            <article class="timeline-card">
+              <h3>Fall</h3>
+              <p>Feeding fish can be active again, especially bass and panfish around edges and structure.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-column-layout">
+          <div>
+            <div class="section-heading">
+              <p class="eyebrow">Safety first</p>
+              <h2>Rules every kid should know</h2>
+            </div>
+
+            <ul class="check-list">
+              <li>Fish only where the public is allowed to be.</li>
+              <li>Never climb fences, storm channels, or slippery concrete banks.</li>
+              <li>Avoid water contact after rain because runoff can carry bacteria, chemicals, and debris.</li>
+              <li>Wear closed-toe shoes and watch for hooks on the ground.</li>
+              <li>Wash hands after fishing, especially before eating.</li>
+              <li>Check local safe-eating advice before keeping fish from urban water.</li>
+            </ul>
+          </div>
+
+          <aside class="guide-panel">
+            <p class="eyebrow">Smart food rule</p>
+            <h2>Not every fish should go home for dinner.</h2>
+            <p>
+              OEHHA has water-by-water eating advice for places like Castaic Lake, Castaic Lagoon, Santa Fe Dam Lake,
+              and Legg Lake. Use that advice every time if you plan to eat your catch.
+            </p>
+            <a class="button button-secondary" href="sources.html">Open the advisory links</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h2>Choose easy water first.</h2>
+          <p>Start with a friendly lake if the LA River feels like too much on day one.</p>
+        </div>
+        <div>
+          <p>Need a rod? Visit <a href="gear.html">Gear Picks</a>.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
